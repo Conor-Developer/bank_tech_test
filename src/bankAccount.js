@@ -6,13 +6,13 @@ class bankAccount {
     this.balance = 0;
   }
 
-  credit(num) {
+  deposit(num) {
     this.balance += num;
     this.updateAccountLog(num, "credit");
     return num;
   }
 
-  debit(num) {
+  withdrawal(num) {
     this.balance -= num;
     this.updateAccountLog(num, "debit");
     return num;
@@ -25,6 +25,8 @@ class bankAccount {
       this.statement.push([date, null, num, this.balance]);
     }
   }
+
+  printStatement() {}
 }
 
 module.exports = bankAccount;

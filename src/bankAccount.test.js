@@ -13,16 +13,14 @@ describe(bankAccount, () => {
     });
 
     it("increases balance by specific amount", () => {
-      account.credit(500);
+      account.deposit(500);
       expect(account.statement[0][3]).toEqual(500);
     });
 
     it("decreases balance by specific amount", () => {
-      account.credit(1000);
-      account.debit(400);
+      account.deposit(1000);
+      account.withdrawal(400);
       expect(account.statement[1][3]).toEqual(600);
     });
-
-    it;
   });
 });
