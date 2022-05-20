@@ -10,7 +10,7 @@ describe(dateFormat, () => {
 
     const day = currentDate.getDate();
     const month = currentDate.getMonth() + 1;
-    const year = currentDate.getYear();
+    const year = currentDate.getFullYear();
 
     dayMonthYear = `${day}/${month}/${year}`;
   });
