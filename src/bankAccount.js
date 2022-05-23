@@ -2,8 +2,9 @@ const dateFormat = require("./date");
 const viewStatement = require("./viewStatement");
 
 class bankAccount {
-  constructor(display = new viewStatement()) {
+  constructor(display = new viewStatement(), date = new dateFormat()) {
     this.display = display;
+    this.date = date;
     this.statement = [];
     this.balance = 0.0;
   }
@@ -23,11 +24,11 @@ class bankAccount {
     return num;
   }
 
-  updateAccountLog(num, accountAction, date = new dateFormat().todaysDate()) {
+  updateAccountLog(num, accountAction) {
     if (accountAction === "credit") {
-      this.statement.push([date, num, null, this.balance]);
-    } else if (accountAction === "debit") {
-      this.statement.push([date, null, num, this.balance]);
+      this.statement.unshift([this.date.todaysDate(), num, null, this.balance]);
+    } else {
+      this.statement.unshift([this.date.todaysDate(), null, num, this.balance]);
     }
   }
 

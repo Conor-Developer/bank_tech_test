@@ -10,13 +10,6 @@ class dateFormat {
 
     return `${day}/${month}/${year}`;
   }
-
-  formatMonth(date) {
-    const month = date.getMonth() + 1;
-    if (date < 9) {
-      return `0${month}`;
-    } else return month;
-  }
 }
 
 module.exports = dateFormat;

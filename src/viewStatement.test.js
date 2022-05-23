@@ -7,16 +7,26 @@ describe(viewStatement, () => {
     display = new viewStatement();
   });
 
-  describe(viewStatement, () => {
+  describe("formatStatement", () => {
+    it("formats a bank statement", () => {
+      const logSpy = jest.spyOn(console, "log");
+
+      const accountLog = [["20/05/2022", 500, null, 1000]];
+      display.formatStatement(accountLog);
+      expect(display.formattedTransactions).toEqual([
+        "20/05/2022 || 500 ||  || 1000",
+      ]);
+    });
+  });
+
+  describe("printStatement", () => {
     it("prints out a bank statement", () => {
       const logSpy = jest.spyOn(console, "log");
 
       const accountLog = [["20/05/2022", 500, null, 1000]];
-      display.printStatement(accountLog);
-      expect(logSpy).toHaveBeenCalledWith("20/05/2022");
-      expect(logSpy).toHaveBeenCalledWith(500);
-      expect(logSpy).toHaveBeenCalledWith(null);
-      expect(logSpy).toHaveBeenCalledWith(1000);
+      display.formatStatement(accountLog);
+      display.printStatement();
+      expect(logSpy).toHaveBeenCalledWith("20/05/2022 || 500 ||  || 1000");
     });
   });
 });
