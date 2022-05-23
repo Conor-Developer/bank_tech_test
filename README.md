@@ -13,6 +13,20 @@ In this challenge, I will be doing a tech test to practice producing high qualit
 - Account statement (date, amount, balance) printing.
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
+#### Acceptance criteria
+
+**Given** a client makes a deposit of 1000 on 10-01-2023  
+**And** a deposit of 2000 on 13-01-2023  
+**And** a withdrawal of 500 on 14-01-2023  
+**When** she prints her bank statement  
+**Then** she would see
+
+```
+date || credit || debit || balance
+14/01/2023 || || 500.00 || 2500.00
+13/01/2023 || 2000.00 || || 3000.00
+10/01/2023 || 1000.00 || || 1000.00
+
 ### Getting started
 
 git clone the repo
@@ -37,3 +51,4 @@ Whilst in the root directory, change directory via 'cd ./src'
 4. Command Guide - To deposit money: account.deposit(NUMBER)
 5. Command Guide - To withdraw money: account.withdrawal(NUMBER)
 6. Command Guide - To print account statement: acccount.printStatement()
+```
