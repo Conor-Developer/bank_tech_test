@@ -10,21 +10,25 @@ class bankAccount {
   }
 
   deposit(num) {
-    num = num.toFixed(2);
-    let money = parseInt(num, 10);
+    let money = this.#formatInteger(num);
     this.balance += money;
-    this.updateAccountLog(money, "credit");
+    this.#updateAccountLog(money, "credit");
     return money;
   }
 
   withdrawal(num) {
-    num = num.toFixed(2);
-    this.balance -= num;
-    this.updateAccountLog(num, "debit");
-    return num;
+    let money = this.#formatInteger(num);
+    this.balance -= money;
+    this.#updateAccountLog(money, "debit");
+    return money;
   }
 
-  updateAccountLog(num, accountAction) {
+  #formatInteger(num) {
+    let money = num.toFixed(2);
+    return parseInt(money, 10);
+  }
+
+  #updateAccountLog(num, accountAction) {
     if (accountAction === "credit") {
       this.statement.unshift([this.date.todaysDate(), num, null, this.balance]);
     } else {

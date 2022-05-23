@@ -15,7 +15,7 @@ class viewStatement {
   }
 
   printStatement() {
-    // console.log("date || credit || debit || balance");
+    console.log("date || credit || debit || balance");
     this.formattedTransactions.forEach((transaction) =>
       console.log(transaction)
     );
