@@ -1,5 +1,8 @@
 {
   "name": "bank_tech_test",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
