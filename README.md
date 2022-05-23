@@ -54,5 +54,5 @@ Whilst in the root directory, change directory via 'cd ./src'
 5. Command Guide - To withdraw money: account.withdrawal(NUMBER)
 6. Command Guide - To print account statement: acccount.printStatement()
 
-![Bank Account Example](images/functionsInUse.png)
+![Bank Account Example](images/FunctionsInUse.png)
 
