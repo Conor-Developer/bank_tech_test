@@ -27,6 +27,8 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 
+```
+
 ### Getting started
 
 git clone the repo
@@ -51,4 +53,6 @@ Whilst in the root directory, change directory via 'cd ./src'
 4. Command Guide - To deposit money: account.deposit(NUMBER)
 5. Command Guide - To withdraw money: account.withdrawal(NUMBER)
 6. Command Guide - To print account statement: acccount.printStatement()
-```
+
+![Bank Account Example](images/functionsInUse.png)
+
