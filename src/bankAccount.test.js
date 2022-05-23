@@ -5,7 +5,7 @@ const dateFormat = require("./date");
 jest.mock("./viewStatement");
 jest.mock("./date");
 
-/* globals account:true */
+/* globals account:true, date:true, display:true */
 
 describe(bankAccount, () => {
   beforeEach(() => {
